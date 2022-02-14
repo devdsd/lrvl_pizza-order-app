@@ -29,8 +29,9 @@ Route::get('/', function () {
 Route::get('/orders', [OrderController::class, 'publicViewOrder'])->name("public_view_orders");
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    $users = UserModel::all();
-    return view('dashboard', compact('users'));
+    // $users = UserModel::all();
+    // return view('dashboard', compact('users'));
+    return view('admin.index');
 })->name('dashboard');
 
 
