@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 // Controllers
 use App\Http\Controllers\PizzaController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserActionController;
 
 
 // Models
@@ -33,6 +34,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // return view('dashboard', compact('users'));
     return view('admin.index');
 })->name('dashboard');
+
+// User Actions
+Route::get("/user/logout", [UserActionController::class, 'userLogout'])->name("user_logout");
 
 
 //  Pizzas (CRUD)
