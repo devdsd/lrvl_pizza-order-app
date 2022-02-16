@@ -24,8 +24,9 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-})->name("welcome");
+    // return view('welcome');
+    return view('frontend/index');
+})->name("home");
 
 Route::get('/orders', [OrderController::class, 'publicViewOrder'])->name("public_view_orders");
 
