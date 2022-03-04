@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 // Model
 use App\Models\Pizza;
-use App\Models\MultiImage;
 
 use Illuminate\Http\Request;
 

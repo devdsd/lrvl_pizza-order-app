@@ -22,7 +22,7 @@
               <h5 class="card-title">All Users</h5>
 
               <!-- Table with stripped rows -->
-              <table class="table datatable">
+              <table class="table datatable table-hover">
                 <thead>
                   <tr>
                   <th scope="col">SL No.</th>
@@ -53,9 +53,5 @@
         </div>
       </div>
     </section>
-
-
-
-
 
 @endsection

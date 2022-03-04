@@ -12,6 +12,7 @@ use App\Http\Controllers\SliderController;
 // Models
 use App\Models\User as UserModel;
 use Illuminate\Support\Facades\DB;
+use App\Models\Slider;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,8 @@ use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     // return view('welcome');
-    return view('frontend/index');
+    $sliders = Slider::all();
+    return view('frontend/index', compact('sliders'));
 })->name("home");
 
 Route::get('/orders', [OrderController::class, 'publicViewOrder'])->name("public_view_orders");
@@ -72,5 +74,10 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
-// Backend: Home Page Routes
+                // Backend: Home Page Routes
+
+// Slider Routes
 Route::get("/home/slider", [SliderController::class, 'homeSlider'])->name("home_slider");
+Route::get("/home/slider/add", [SliderController::class, 'addSliderForm'])->name("add_slider_form");
+Route::post("/home/slider/store", [SliderController::class, 'storeSlider'])->name("store_slider");
+
